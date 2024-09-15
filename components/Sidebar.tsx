@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
 import { cn } from "@/lib/utils";
 import { BotIcon, Code2Icon, ImageIcon, LayoutDashboard, Music2Icon, Settings2Icon, VideoIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const routes = [
 	{
@@ -51,6 +52,9 @@ const routes = [
 ];
 
 const Sidebar = () => {
+
+    const pathName = usePathname();
+
 	return (
 		<div className="sidebar space-y-4 py-1 flex flex-col h-full bg-black text-white">
 			<div className="px-3 py-2 flex-1">
@@ -59,12 +63,13 @@ const Sidebar = () => {
 						<Image fill src="/logo.svg" alt="Figgy Logo" />
 					</div>
 				</Link>
+                
 				<div className="space-y-1 flex justify-center items-center flex-col">
 					{routes.map((route) => (
 						<Link
 							href={route.href}
 							key={route.label}
-							className="flex items-center justify-items-start p-5 rounded-lg hover:bg-gray-800 w-11/12 cursor-pointer rounded-xl"
+							className={cn("flex items-center justify-items-start p-5 hover:bg-gray-800 w-11/12 cursor-pointer rounded-xl", pathName === route.href ? "bg-gray-800" : "")}
 						>
 							<route.icon className={cn(route.color, "w-6 h-6 mr-4")} />{" "}
 							<div className="">
