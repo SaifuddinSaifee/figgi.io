@@ -106,15 +106,15 @@ const Conversation = () => {
 				{messages.map((message, index) => (
 					<div
 						key={index}
-						className={`p-4 rounded-lg ${
+						className={`p-4 rounded-lg m-4 ${
 							message.role === "user"
-								? "bg-white border border-black/10 rounded-xl"
-								: "bg-white border border-indigo-300 rounded-xl"
+								? "bg-green-50 border border-black/50 rounded-xl user"
+								: "bg-indigo-50 border border-indigo-700 rounded-xl figgi"
 						}`}
 					>
 						<p
 							className={`text-md font-bold mb-2 ${
-								message.role === "user" ? "text-black" : "text-indigo-500"
+								message.role === "user" ? "text-green-700" : "text-indigo-700"
 							}`}
 						>
 							{message.role === "user" ? "You" : "Figgi"}
