@@ -5,6 +5,8 @@ import { BotIcon, Code2Icon, ImageIcon, LayoutDashboard, Music2Icon, Settings2Ic
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import logo from "/assets/logo.png";
+import { UserButton } from "@clerk/nextjs";
 
 const routes = [
 	{
@@ -60,10 +62,14 @@ const Sidebar = () => {
 			<div className="px-3 py-2 flex-1">
 				<Link href="/dashboard" className="flex justify-center mb-14">
 					<div className="relative w-20 h-20 flex justify-center items-center">
-						<Image fill src="/logo.svg" alt="Figgy Logo" />
+						<Image fill src={logo} alt="Figgi Logo" />
 					</div>
 				</Link>
-                
+
+				<div className="flex w-full m-4">
+				<UserButton afterSwitchSessionUrl="/" />
+			</div>
+            
 				<div className="space-y-1 flex justify-center items-center flex-col">
 					{routes.map((route) => (
 						<Link

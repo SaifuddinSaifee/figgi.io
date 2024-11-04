@@ -15,7 +15,7 @@ body {
   }
 }
 
-.figgi pre {
+pre {
   padding: 1.5rem;
   margin: 1rem;
   background-color: white;
@@ -23,57 +23,130 @@ body {
   border-radius: 1rem;
   box-shadow: rgba(33, 0, 43, 0.15) 0px 2px 8px 0px;
   font-family: "JetBrains Mono", monospace;
+  overflow-x: scroll; 
   /* font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal; */
-
 }
 
-.figgi li code{
+li code, p code {
   font-family: "JetBrains Mono", monospace;
   color: rgb(255, 255, 255);
-  background-color: #4338ca;
-  padding: 2px;
+  background-color: #765bfc;
+  padding: 2px 4px;
   font-weight: 600;
-  /* border-radius: 2px; */
+  font-size: 0.9rem;
+  border-radius: 8px;
 }
 
-.figgi h1 {
+
+h1 {
   font-size: 32px;
   padding: 1rem 0;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
 }
 
-.figgi h2 {
+h2 {
   font-size: 24px;
   padding: 1rem 0;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
 }
 
-.figgi h3 {
+h3 {
   font-size: 18px;
   padding: 1rem 0;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
 
-.figgi hr {
+hr {
   margin: 1rem 0;
 }
 
-.figgi ul li {
-  padding-left: 3rem;
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+
+}
+
+ul li {
+  padding-left: 0.5rem;
   font-family: "Montserrat", sans-serif;
   padding-bottom: 0.25rem;
 
 }
 
-.figgi p {
+ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+
+}
+
+ol li {
+  padding-left: 0.5rem;
   font-family: "Montserrat", sans-serif;
   padding-bottom: 0.25rem;
+
 }
+
+p {
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 0.5rem;
+}
+
+.prose a {
+  color: #765bfc;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+table {
+  color: #765bfc;
+  background-color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border-collapse: separate; /* Keeps the radius effect */
+  overflow: hidden; /* Ensures content doesn't spill over rounded corners */
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: rgba(33, 0, 43, 0.15) 0px 2px 8px 0px;
+  padding: 1rem;
+}
+
+table, td, th {
+  border: 1px solid;
+}
+
+
+
+
+/* td, th {
+  border: 1px solid;
+} */
+
+/* table tr:first-child th {
+  border-top: none;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tr td:first-child,
+table tr th:first-child {
+  border-left: none;
+}
+
+table tr td:last-child,
+table tr th:last-child {
+  border-right: none;
+} */
+
 
 @layer base {
   /* :root {
