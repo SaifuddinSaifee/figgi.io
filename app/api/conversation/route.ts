@@ -3,7 +3,10 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
 // Initialize the OpenAI client
-const openai = new OpenAI();
+const openai = new OpenAI({
+    baseURL: 'http://localhost:11434/v1',
+    apiKey: 'ollama', // required but unused
+  })
 
 export async function POST(request: Request) {
     try {
@@ -24,8 +27,8 @@ export async function POST(request: Request) {
 
         // Call the OpenAI API for message completion
         const completion = await openai.chat.completions.create({
-            model: "gpt-4o-mini", // Make sure the model name is correct
-            messages,
+            model: "qwen2.5:3b", // Make sure the model name is correct
+            messages: messages,
         });
 
         // Extract the content from the response
